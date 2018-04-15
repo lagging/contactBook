@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: com.ashish.ws.repository.ContactRepositoryTest
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 3.309 s - in com.ashish.ws.repository.ContactRepositoryTest

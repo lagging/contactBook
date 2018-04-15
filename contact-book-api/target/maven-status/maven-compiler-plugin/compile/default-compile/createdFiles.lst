@@ -1,0 +1,6 @@
+com/ashish/ws/api/controllers/GlobalExceptionHandler.class
+com/ashish/ws/api/controllers/AuthenticationEntryPoint.class
+com/ashish/ws/api/controllers/SpringSecurityConfig.class
+com/ashish/WebServicesApplication.class
+com/ashish/ws/api/controllers/contact/ContactController.class
+com/ashish/ws/api/controllers/user/UserController.class

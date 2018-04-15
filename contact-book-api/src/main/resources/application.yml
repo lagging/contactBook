@@ -1,0 +1,59 @@
+# Note: The order of declaration of profiles and properties matters. In case of multiple declaration, the later declaration will override the previous one.
+
+# This section will apply to all profiles
+spring:
+    profiles.active: dev
+    application:
+        name: contact-book
+    jpa:
+        hibernate:
+            ddl-auto: none
+            dialect: org.hibernate.dialect.MySQL5Dialect
+            naming.physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    mvc.dispatch-options-request: true
+    datasource:
+        maxActive: 5
+        minIdle: 2
+        maxIdle: 2
+cors.allow:
+    origins: "*"
+    methods: "*"
+server:
+    port: 9000
+---
+
+# This section will apply only to dev,prodtest profile
+spring:
+    profiles: dev
+    datasource:
+        url: jdbc:mysql://localhost:3306/contact_book?useSSL=false
+        username: root
+        password: root
+        testWhileIdle: true
+        validationQuery: SELECT 1
+    jpa:
+        hibernate:
+          ddl-auto: update
+        show-sql: true
+---
+
+spring:
+    # This section will apply only to prod profile
+    profiles: prod
+    datasource:
+            url: jdbc:mysql://localhost:3306/contact_book?useSSL=false
+            username: root
+            password: root
+            testWhileIdle: true
+            validationQuery: SELECT 1
+    jpa:
+        show-sql: false
+        hibernate:
+            ddl-auto: none
+    datasource:
+        maxActive: 50
+        minIdle: 10
+        maxIdle: 10
+# Do not put config here in prod section unless you are very sure
+# You might want to put your values in "prodtest,prod" section above
+# which is common to both preprod and prod
